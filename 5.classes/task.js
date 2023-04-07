@@ -6,10 +6,10 @@ class PrintEditionItem {
     this.state = 100;
     this.type = null;
  }
- fix() {
+  fix() {
     this.state *= 1.5;
  }
- set state(newState) {
+  set state(newState) {
     if (newState < 0) {
         this._state = 0;
     } else if (newState > 100) {
@@ -18,7 +18,7 @@ class PrintEditionItem {
         this._state = newState;
     }
  }
- get state() {
+  get state() {
     return this._state;
  }
 }
@@ -54,3 +54,20 @@ class FDetectiveBook extends Book {
     }
 }
 
+class Library {
+    constructor(name, books) {
+        this.name = name;
+        this.books = [];
+    }
+    addBook(book) {
+      if (book.state > 30) {
+          this.books.push(book);
+        }
+      }
+    findBookBy(type, value) {
+        return result = this.books.find((item) => item[type] === value) || null;
+      }
+    giveBookByName(bookName) {
+
+    }
+}

@@ -1,5 +1,4 @@
-﻿// задача 1
-function parseCount(value) {
+﻿function parseCount(value) {
     if (isNaN(value)) {
         throw new Error("Невалидное значение");
     } else {
@@ -14,7 +13,7 @@ function validateCount(value) {
     }
 }
 
-// задача 2
+
 class Triangle {
     constructor(a, b, c) {
         if(a + b < c || a + c < b || b + c < a) {

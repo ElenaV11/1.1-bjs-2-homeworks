@@ -72,7 +72,8 @@ class Library {
         if (this.books = this.books.filter((item) => item.name === bookName)){
             return book;
         } else {
-            (!book) return null;
+            (!book) 
+            return null;
         }
 	}
 }

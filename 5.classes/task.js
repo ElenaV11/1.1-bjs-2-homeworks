@@ -47,7 +47,7 @@ class FantasticBook extends Book {
         this.type = "fantastic";
     }
 }
-class FDetectiveBook extends Book {
+class DetectiveBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
         super(author, name, releaseDate, pagesCount);
         this.type = "detective";
@@ -65,9 +65,14 @@ class Library {
         }
       }
     findBookBy(type, value) {
-        return result = this.books.find((item) => item[type] === value) || null;
+        return this.books.find((item) => item[type] === value) || null;
       }
     giveBookByName(bookName) {
-
-    }
+        const book = this.findBookBy("name", bookName);
+        if (this.books = this.books.filter((item) => item.name === bookName)){
+            return book;
+        } else {
+            (!book) return null;
+        }
+	}
 }

@@ -69,7 +69,7 @@ class Library {
       }
     giveBookByName(bookName) {
         const book = this.findBookBy("name", bookName);
-        if (this.books = this.books.filter((item) => item.name === bookName)){
+        if (this.books = this.books.filter((item) => item.name !== bookName)){
             return book;
         } else {
             (!book) 

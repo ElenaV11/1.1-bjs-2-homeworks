@@ -2,12 +2,12 @@
     if (isNaN(value)) {
         throw new Error("Невалидное значение");
     } else {
-        return Number.parseFloat;
+        return Number.parseFloat(value);
     }
 }
 function validateCount(value) {
     try {
-        return parseCount;
+        return parseCount(value);
     } catch(error) {
         return error;
     }

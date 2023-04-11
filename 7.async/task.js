@@ -1,7 +1,7 @@
 class AlarmClock {
     constructor() {
         this.alarmCollection = [];
-        this.intervalId;
+        this.intervalId = null;
     }
     addClock(time, callback) {
         if (!time || !callback) {
@@ -10,7 +10,12 @@ class AlarmClock {
         if (this.alarmCollection.includes(time)) {
             console.warn("Уже присутствует звонок на это же время");
         }
-        this.alarmCollection.push({callback, time, canCall: true });
+        const Arr = {
+            callback,
+            time,
+            canCall: true,
+        }
+        this.alarmCollection.push(Arr);
     }
     removeClock(time) {
         this.alarmCollection = this.alarmCollection.filter(item => item.time !== time);
@@ -19,7 +24,7 @@ class AlarmClock {
         const now = new Date();
         const hours = now.getHours().toString().padStart(2, '0');
         const minutes = now.getMinutes().toString().padStart(2, '0');
-        return "${hours}:${minutes}";
+        return hours + ":" + minutes;
     }
     start() {
         if (this.intervalId) {
